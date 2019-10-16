@@ -1,21 +1,23 @@
-# Spotify Charts Data
+# Spotify Charts Data Downloader
 
-Use the following script to download all the data:
+This is a set of node.js scripts to automatically download all the [Spotify Charts](https://spotifycharts.com/) data.
+
+First, use the following script to download all the data:
 
 ```
 node download.js
 ```
 
-Some data is missing, so, run the following script to separate successful files from missing-data files:
+Some dates will not have data available, so, run the following script to separate files with valid data from missing-data files:
 
 ```
 node clean.js
 ```
 
-Use the following script to merge the downloaded data:
+Use the following script to merge all the downloaded data into a single file:
 
 ```
 node merge.js
 ```
 
-Source: https://spotifycharts.com/regional/mx/weekly/2019-09-20--2019-09-27
+At the end, all the data will be written into `spotify-charts.csv`
