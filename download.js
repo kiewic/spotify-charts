@@ -1,7 +1,8 @@
 'use strict';
 
-const https = require('https');
 const fs = require('fs');
+const https = require('https');
+const path = require('path');
 
 function getDay(date) {
     return `00${date.getUTCDate()}`.slice(-2);
@@ -109,6 +110,13 @@ for (const country in countries) {
 function query() {
     if (allOptions.length > 0) {
         const options = allOptions.pop();
+
+        if (fs.existsSync(path.join('./regional/', options.fileName))) {
+            console.log(`Already downloaded: ${options.fileName}`);
+            query();
+            return;
+        }
+
         const file = fs.createWriteStream(options.fileName);
         file.on('close', () => {
             // console.log('done!');
