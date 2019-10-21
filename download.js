@@ -99,7 +99,7 @@ const countries = {
 
 const allOptions = [];
 for (const country in countries) {
-    let end = new Date(Date.UTC(2019, 10 - 1, 11, 12, 0, 0));
+    let end = new Date(Date.UTC(2019, 10 - 1, 18, 12, 0, 0));
     while (end.getUTCFullYear() > 2018) {
         const options = getDateParts(country, end);
         allOptions.push(options);
