@@ -11,6 +11,8 @@ node download.js
 Some dates will not have data available, so, run the following script to separate files with valid data from missing-data files:
 
 ```
+mkdir missing
+mkdir regional
 node clean.js
 ```
 
